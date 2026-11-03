@@ -1,0 +1,61 @@
+SIH26092 — FINAL V6 DATASET AUDIT
+
+Source: corrected applicants_FINAL.csv + previously locked supporting files.
+CSV validation uses keep_default_na=False so literal 'None' is treated as a valid categorical value.
+
+COUNTS
+- Applicants: 20,000
+- Schemes: 5
+- Partner references: 41
+- Partner status rows: 41
+- Split: {'train': 13998, 'test': 3003, 'validation': 2999}
+- Eligibility: {'Eligible': 15111, 'Ineligible': 4889}
+- alternate_scheme_option literal 'None': 19,229
+- alternate_scheme_option actual missing: 0
+
+FULL AUDIT
+- 20,000 applicants: PASS
+- unique applicant IDs: PASS
+- no duplicate applicant rows: PASS
+- age 18–70: PASS
+- income nonnegative: PASS
+- project cost positive: PASS
+- requested loan nonnegative: PASS
+- valid applicant coordinates: PASS
+- valid split labels: PASS
+- alternate scheme has no actual missing/blank values: PASS
+- split counts sum to 20k: PASS
+- exactly 5 scheme rows: PASS
+- unique scheme names: PASS
+- expected 5 canonical scheme names: PASS
+- 41 partner references: PASS
+- unique partner IDs: PASS
+- 41 status rows: PASS
+- unique status IDs: PASS
+- partner/status IDs identical: PASS
+- valid partner coordinates: PASS
+- eligible loan ≤ maximum eligible loan: PASS
+- eligible loan ≤ 90% project cost: PASS
+- EMI consistent: PASS
+- eligible illustrative loan = requested loan: PASS
+- ineligible illustrative loan = 0: PASS
+- no fabricated live financial metrics: PASS
+- no missing partner names: PASS
+- no missing scheme names: PASS
+
+DATA SEMANTICS
+- 'None' in alternate_scheme_option means no alternate scheme and is NOT a missing value.
+- The 119 ineligible records whose requested loan exceeds project cost are retained as negative/ineligible examples; they are not eligible loan violations.
+
+OFFICIAL NSFDC BOUNDARIES
+- Current NSFDC rules used for the dataset are documented in the README/supporting scheme rules.
+- NSFDC currently states 102 total channel partners; this package contains 41 source-backed organization references and does not fabricate the remaining identities.
+- Applicant records are synthetic training/development data.
+- Partner coordinates are city-level estimates, not exact branch GPS.
+- Live NPA/overdue/utilization/active-status values are not fabricated.
+
+LOCK STATUS
+- ALL CHECKS PASS: True
+- Checks passed: 28/28
+- This is the FINAL V6 package for ML/rule-engine development and SIH prototype integration.
+- No further version is needed unless new official partner data is obtained or NSFDC rules change.

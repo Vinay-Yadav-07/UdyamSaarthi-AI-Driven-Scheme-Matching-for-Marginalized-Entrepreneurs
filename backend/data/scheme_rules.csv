@@ -1,0 +1,6 @@
+scheme_id,scheme_name,scheme_type,purpose,max_project_cost_inr,max_loan_inr,beneficiary_interest_rate,repayment_period,moratorium,channel,source,interest_rate_min_pa,interest_rate_max_pa
+MFS,Micro Finance Scheme,Micro credit,Income-generating,140000.0,125000,6.5,3 years,3 months,SCAs/CAs,Current NSFDC FAQ 2026,6.5,6.5
+AMY,Aajeevika Micro-Finance Yojana,Micro finance,Income-generating,140000.0,125000,15,3 years,3 months,Selected NBFC-MFIs,Current NSFDC FAQ 2026,15.0,15.0
+TERM_LOAN,Term Loan,Term loan,Income-generating,5000000.0,4500000,8,7 years,6 months,SCAs/CAs,Current NSFDC FAQ 2026,8.0,8.0
+UNY,Udyam Nidhi Yojana,Small/micro activity,Income-generating,500000.0,450000,13 cooperative / 15 SFB,5 years,3 months,Co-op Banks/Societies/SFBs,Current NSFDC FAQ 2026,13.0,15.0
+ELS,Educational Loan Scheme,Education,Professional/technical education,,4000000 or 90% fee,6.5,10-12 years,Course duration + 1 year / applicable,SCAs/CAs,Current NSFDC FAQ 2026,6.5,6.5
